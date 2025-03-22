@@ -657,3 +657,27 @@ ul#taskList{
     margin-right: auto;
 }
 
+.wordle-container{
+    max-width: 75%;
+    margin: auto;
+    padding-bottom: 350px;
+}
+
+.wordle-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 75px 75px;
+}
+
+.world-grid{
+    min-width: 100px;
+    min-height: 100px;
+    border: 2px solid black;
+    font-size: 30px;
+    place-items: center; 
+}
+
+.wordle-text-container{
+    display: flex;
+    flex-direction: row;
+}

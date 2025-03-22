@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe</title>
+        <meta name="description" content="Use the form to send Harry a message to get in touch to work together on a project.">
+        <link rel="icon" href="/media/site-icon.svg">
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <script src="/script.js"></script>
+        <script type="module" src="./ui.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">Games & Tools</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav">
+                <a href="/projects/">Games</a>
+                <a href="/tools/">Tools</a>
+            </nav>
+        </div>
+    </header>  
+        <div class="container">
+            <div class="header-text-only">
+                <h1>Wordle</h1>
+                <p>Try to guess the five letter word.</p>
+            </div>
+            <div class="wordle-container">
+                <div class="worlde-input-container">
+                        <form class="wordle-text-container">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="button" name="" id="wordleBtn" value="Submit" class="button">
+                        <p id="errorMessage"></p>
+                    </form>
+                </div>
+                <div class="wordle-grid-container">
+                <div class="wordle-row">
+                    <div id="rowOneOne" class="world-grid"></div>
+                    <div id="rowOneTwo" class="world-grid"></div>
+                    <div id="rowOneThree" class="world-grid"></div>
+                    <div id="rowOneFour" class="world-grid"></div>
+                    <div id="rowOneFive" class="world-grid"></div>
+                </div>
+                <div class="wordle-row">
+                    <div id="rowTwoOne" class="world-grid"></div>
+                    <div id="rowTwoTwo" class="world-grid"></div>
+                    <div id="rowTwoThree" class="world-grid"></div>
+                    <div id="rowTwoFour" class="world-grid"></div>
+                    <div id="rowTwoFive" class="world-grid"></div>
+                </div>
+                <div class="wordle-row">
+                    <div id="rowThreeOne" class="world-grid"></div>
+                    <div id="rowThreeTwo" class="world-grid"></div>
+                    <div id="rowThreeThree" class="world-grid"></div>
+                    <div id="rowThreeFour" class="world-grid"></div>
+                    <div id="rowThreeFive" class="world-grid"></div>
+                </div>
+                <div class="wordle-row">
+                    <div id="rowFourOne" class="world-grid"></div>
+                    <div id="rowFourTwo" class="world-grid"></div>
+                    <div id="rowFourThree" class="world-grid"></div>
+                    <div id="rowFourFour" class="world-grid"></div>
+                    <div id="rowFourFive" class="world-grid"></div>
+                </div>
+                <div class="wordle-row">
+                    <div id="rowFiveOne" class="world-grid"></div>
+                    <div id="rowFiveTwo" class="world-grid"></div>
+                    <div id="rowFiveThree" class="world-grid"></div>
+                    <div id="rowFiveFour" class="world-grid"></div>
+                    <div id="rowFiveFive" class="world-grid"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <div id="footer"></div>
+</body>
+</html>
