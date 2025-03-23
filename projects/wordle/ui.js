@@ -85,6 +85,10 @@ function updateUI(){
         }
         console.log(guess);
         wordCheck(guess);
+        if(guess == theWord){
+            handler.style.display = "none";
+        }
+        
         count++;
 
         charOne.value = "";
