@@ -1,4 +1,4 @@
-import {wordCheck, getSpellWord} from "./wordle.js";
+import {wordCheck, getSpellWord} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){
