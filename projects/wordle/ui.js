@@ -34,6 +34,7 @@ function updateUI(){
     let fiveThree = document.getElementById("rowThreeFive");
     let fiveFour = document.getElementById("rowFourFive");
     let fiveFive = document.getElementById("rowFiveFive");
+    let status = document.getElementById("statusMessage");
 
     let theWord = getSpellWord();
     console.log(theWord);
@@ -85,10 +86,14 @@ function updateUI(){
         }
         console.log(guess);
         wordCheck(guess);
-        if(guess == theWord){
+
+        if(guess.value == theWord.value){
             handler.style.display = "none";
+            let winMessage = document.createElement("h2");
+            winMessage.textContent = "You guessed It!";
+            status.appendChild(winMessage);
         }
-        
+
         count++;
 
         charOne.value = "";
