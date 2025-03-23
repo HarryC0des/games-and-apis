@@ -1,4 +1,5 @@
 import { updateUI } from "./ui.js";
+let spellThis = "";  // Global variable to store the generated word
 
 function wordleWord(){
     const wordleChoices = [
@@ -10,10 +11,16 @@ function wordleWord(){
         "zesty"
     ];
 
-    const randIndex = Math.floor(Math.random()*wordleChoices.length);
-    let spellThis = wordleChoices.randIndex;
-    return spellThis;
-}
+const randIndex = Math.floor(Math.random()*wordleChoices.length);
+spellThis = wordleChoices[randIndex];
+console.log(spellThis);
+return spellThis;
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    wordleWord();  // Initialize spellThis when DOM is ready
+});
+
 
 let guessCount = 0;
 let firstLetterStatus = "no";
@@ -21,15 +28,16 @@ let secondLetterStatus = "no";
 let thirdLetterStatus = "no";
 let fourthLetterStatus = "no";
 let fifthLetterStatus = "no";
+let gameStatus = "play";
 
-function playWordle(guess) {
+function wordCheck(guess) {
     let firstLetter = spellThis[0];
     let secondLetter = spellThis[1];
     let thirdLetter = spellThis[2];
     let fourthLetter = spellThis[3];
     let fifthLetter = spellThis[4];
+    console.log("word check happened");
 
-    function wordCheck(){
         if(guess[0] == firstLetter){
             firstLetterStatus = "yes";
             return firstLetterStatus;
@@ -37,6 +45,7 @@ function playWordle(guess) {
             firstLetterStatus = "maybe";
             return firstLetterStatus;
         } else firstLetterStatus = "no";
+        console.log("first letter check");
 
         if(guess[1] == secondLetter){
             secondLetterStatus = "yes";
@@ -70,11 +79,28 @@ function playWordle(guess) {
             return fifthLetterStatus;
         } else fifthLetterStatus = "no";
 
-        turnCount++;
+    function checkStatus(){
+        if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
+            gameStatus = "win";
+            return gameStatus;
+        } else if (guessCount = 5 ){
+            gameStatus = "over";
+            return gameStatus;
+        } else gameStatus = "play";
     };
 
+    function playLoop(){
+        console.log("play loop check");
+        wordCheck();
+        guessCount++;
+        checkStatus();
 
-}
+        return gameStatus;
+    };
 
-document.addEventListener("DOMContentLoaded",wordleWord());
-console.log(spellThis);
+    console.log(gameStatus);
+    console.log(guessCount);
+
+};
+
+export {wordCheck, wordleWord};
