@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
     wordleWord();  // Initialize spellThis when DOM is ready
 });
 
+function getSpellWord(){
+    return spellThis;
+}
+
 
 let guessCount = 0;
 let firstLetterStatus = "no";
@@ -91,4 +95,4 @@ function wordCheck(guess) {
 
 };
 
-export {wordCheck, wordleWord};
+export {wordCheck, getSpellWord};

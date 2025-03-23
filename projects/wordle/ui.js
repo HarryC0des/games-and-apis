@@ -1,4 +1,4 @@
-import {wordCheck} from "./wordle.js";
+import {wordCheck, getSpellWord} from "./wordle.js";
 let count = 0;
 
 function updateUI(){
@@ -34,6 +34,9 @@ function updateUI(){
     let fiveThree = document.getElementById("rowThreeFive");
     let fiveFour = document.getElementById("rowFourFive");
     let fiveFive = document.getElementById("rowFiveFive");
+
+    let theWord = getSpellWord();
+    console.log(theWord);
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
