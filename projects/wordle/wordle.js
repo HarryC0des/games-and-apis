@@ -40,63 +40,51 @@ function wordCheck(guess) {
 
         if(guess[0] == firstLetter){
             firstLetterStatus = "yes";
-            return firstLetterStatus;
         } else if (guess[0] == secondLetter || guess[0] == thirdLetter || guess[0] == fourthLetter || guess[0] == fifthLetter){
             firstLetterStatus = "maybe";
-            return firstLetterStatus;
         } else firstLetterStatus = "no";
-        console.log("first letter check");
+
+        console.log("First Letter is "+firstLetterStatus);
 
         if(guess[1] == secondLetter){
             secondLetterStatus = "yes";
-            return secondLetterStatus;
         } else if (guess[1] == firstLetter || guess[1] == thirdLetter || guess[1] == fourthLetter || guess[1] == fifthLetter){
             secondLetterStatus = "maybe";
-            return secondLetterStatus;
         } else secondLetterStatus = "no";
+
+        console.log("Second Letter is "+secondLetterStatus);
 
         if(guess[2] == thirdLetter){
             thirdLetterStatus = "yes";
-            return thirdLetterStatus;
         } else if (guess[2] == firstLetter || guess[2] == secondLetter || guess[2] == fourthLetter || guess[2] == fifthLetter){
             thirdLetterStatus = "maybe";
-            return thirdLetterStatus;
         } else thirdLetterStatus = "no";
 
         if(guess[3] == fourthLetter){
             fourthLetterStatus = "yes";
-            return fourthLetterStatus;
         } else if (guess[3] == firstLetter || guess[3] == secondLetter || guess[3] == thirdLetter || guess[3] == fifthLetter){
             fourthLetterStatus = "maybe";
-            return fourthLetterStatus;
         } else fourthLetterStatus = "no";
 
         if(guess[4] == fifthLetter){
             fifthLetterStatus = "yes";
-            return fifthLetterStatus;
         } else if (guess[4] == firstLetter || guess[4] == secondLetter || guess[4] == thirdLetter || guess[4] == fourthLetter){
             fifthLetterStatus = "maybe";
-            return fifthLetterStatus;
         } else fifthLetterStatus = "no";
 
     function checkStatus(){
         if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
             gameStatus = "win";
+            console.log(gameStatus);
             return gameStatus;
-        } else if (guessCount = 5 ){
+        } else if (guessCount == 5 ){
             gameStatus = "over";
             return gameStatus;
         } else gameStatus = "play";
     };
 
-    function playLoop(){
-        console.log("play loop check");
-        wordCheck();
         guessCount++;
         checkStatus();
-
-        return gameStatus;
-    };
 
     console.log(gameStatus);
     console.log(guessCount);
