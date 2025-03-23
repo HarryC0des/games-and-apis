@@ -2,6 +2,7 @@ import {wordCheck} from "./wordle.js";
 let count = 0;
 
 function updateUI(){
+    let handler = document.getElementById("wordleHandler");
     let charOne = document.getElementById("boxOne");
     let charTwo = document.getElementById("boxTwo");
     let charThree = document.getElementById("boxThree");
@@ -18,6 +19,21 @@ function updateUI(){
     let twoThree = document.getElementById("rowThreeTwo");
     let twoFour = document.getElementById("rowFourTwo");
     let twoFive = document.getElementById("rowFiveTwo");
+    let threeOne = document.getElementById("rowOneThree");
+    let threeTwo = document.getElementById("rowTwoThree");
+    let threeThree = document.getElementById("rowThreeThree");
+    let threeFour = document.getElementById("rowFourThree");
+    let threeFive = document.getElementById("rowFiveThree");
+    let fourOne = document.getElementById("rowOneFour");
+    let fourTwo = document.getElementById("rowTwoFour");
+    let fourThree = document.getElementById("rowThreeFour");
+    let fourFour = document.getElementById("rowFourFour");
+    let fourFive = document.getElementById("rowFiveFour");
+    let fiveOne = document.getElementById("rowOneFive");
+    let fiveTwo = document.getElementById("rowTwoFive");
+    let fiveThree = document.getElementById("rowThreeFive");
+    let fiveFour = document.getElementById("rowFourFive");
+    let fiveFive = document.getElementById("rowFiveFive");
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
@@ -44,10 +60,35 @@ function updateUI(){
             twoThree.appendChild(squareThree);
             twoFour.appendChild(squareFour);
             twoFive.appendChild(squareFive);
+        } else if(count ==2){
+            threeOne.appendChild(squareOne);
+            threeTwo.appendChild(squareTwo);
+            threeThree.appendChild(squareThree);
+            threeFour.appendChild(squareFour);
+            threeFive.appendChild(squareFive);
+        } else if (count == 3){
+            fourOne.appendChild(squareOne);
+            fourTwo.appendChild(squareTwo);
+            fourThree.appendChild(squareThree);
+            fourFour.appendChild(squareFour);
+            fourFive.appendChild(squareFive);
+        } else if (count == 4){
+            fiveOne.appendChild(squareOne);
+            fiveTwo.appendChild(squareTwo);
+            fiveThree.appendChild(squareThree);
+            fiveFour.appendChild(squareFour);
+            fiveFive.appendChild(squareFive);
+            handler.style.display = "none";
         }
         console.log(guess);
         wordCheck(guess);
         count++;
+
+        charOne.value = "";
+        charTwo.value = "";
+        charThree.value = "";
+        charFour.value = "";
+        charFive.value = "";
     })
 
 ;}
