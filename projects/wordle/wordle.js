@@ -96,7 +96,7 @@ function wordCheck(guess) {
 };
 
 function getCheckStatus(){
-    return checkStatus;
+    return checkStatus();
 };
 
 function getStatusArray(){
