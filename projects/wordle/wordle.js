@@ -95,4 +95,12 @@ function wordCheck(guess) {
 
 };
 
-export {wordCheck, getSpellWord};
+function getCheckStatus(){
+    return checkStatus;
+};
+
+function getStatusArray(){
+    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus,fifthLetterStatus];
+};
+
+export {wordCheck, getSpellWord, getCheckStatus, getStatusArray};

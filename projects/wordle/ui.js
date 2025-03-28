@@ -1,4 +1,4 @@
-import {wordCheck, getSpellWord} from "/games-and-apis/projects/wordle/wordle.js";
+import {wordCheck, getSpellWord, getCheckStatus, getStatusArray} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){
@@ -37,7 +37,10 @@ function updateUI(){
     let status = document.getElementById("statusMessage");
 
     let theWord = getSpellWord();
+    let winStatus = getCheckStatus();
+    let yesMaybeNo = getStatusArray();
     console.log(theWord);
+
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
@@ -58,6 +61,31 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
+            if(yesMaybeNo[0]== "yes"){
+                oneOne.style.backgroundColor="green";
+            } else if(yesMaybeNo[0]=="maybe"){
+                oneOne.style.backgroundColor = "yellow";
+            }
+            if(yesMaybeNo[1]== "yes"){
+                oneTwo.style.backgroundColor="green";
+            } else if(yesMaybeNo[1]=="maybe"){
+                oneTwo.style.backgroundColor = "yellow";
+            }
+            if(yesMaybeNo[2]== "yes"){
+                oneThree.style.backgroundColor="green";
+            } else if(yesMaybeNo[2]=="maybe"){
+                oneThree.style.backgroundColor = "yellow";
+            }
+            if(yesMaybeNo[3]== "yes"){
+                oneFour.style.backgroundColor="green";
+            } else if(yesMaybeNo[3]=="maybe"){
+                oneFour.style.backgroundColor = "yellow";
+            }
+            if(yesMaybeNo[4]== "yes"){
+                oneFive.style.backgroundColor="green";
+            } else if(yesMaybeNo[4]=="maybe"){
+                oneFive.style.backgroundColor = "yellow";
+            }
         } else if(count ==1){
             twoOne.appendChild(squareOne);
             twoTwo.appendChild(squareTwo);
@@ -87,12 +115,12 @@ function updateUI(){
         console.log(guess);
         wordCheck(guess);
 
-        if(guess.value == theWord.value){
+        if(winStatus == "win"){
             handler.style.display = "none";
             let winMessage = document.createElement("h2");
             winMessage.textContent = "You guessed It!";
             status.appendChild(winMessage);
-        }
+        };
 
         count++;
 
