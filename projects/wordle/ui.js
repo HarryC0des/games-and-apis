@@ -1,4 +1,4 @@
-import {wordCheck, getSpellWord, getCheckStatus, getStatusArray} from "/games-and-apis/projects/wordle/wordle.js";
+import {wordCheck, getSpellWord, getStatusArray} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){
@@ -159,12 +159,11 @@ function updateUI(){
         };
         
         updateColors();
-        getCheckStatus();
 
-        console.log("winstatus from update UI: ", winStatus);
+        console.log("gameStatus from update UI: ", gameStatus);
 
 
-        if(winStatus === "win"){
+        if(gameStatus === "win"){
             handler.style.display = "none";
             let winMessage = document.createElement("h2");
             winMessage.textContent = "You guessed It!";
