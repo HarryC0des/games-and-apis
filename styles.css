@@ -683,3 +683,24 @@ ul#taskList{
     display: flex;
     flex-direction: row;
 }
+
+.wordle-input-container h2{
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .wordle-grid-container {
+        grid-template-rows: repeat(6, 50px); /* Make rows smaller */
+    }
+
+    .world-grid {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 16px;
+    }
+
+    .wordle-text-container {
+        flex-direction: column;
+    }
+}
