@@ -122,7 +122,7 @@ function checkStatusFunction(){
 };
 
 function getCheckStatus(){
-    return checkStatus;
+    gameStatus;
 };
 
 function getStatusArray(){
