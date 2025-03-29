@@ -77,25 +77,23 @@ function wordCheck(guess) {
             fifthLetterStatus = "maybe";
         } else fifthLetterStatus = "no";
 
-        checkStatus = checkStatusFunction();
-
         guessCount++;
-        checkStatusFunction();
+        checkStatus = checkStatusFunction();
 
     console.log(gameStatus);
     console.log(guessCount);
+    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus, fifthLetterStatus];
+};
 
-    function checkStatusFunction(){
-        if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
-            gameStatus = "win";
-            console.log(gameStatus);
-            return gameStatus;
-        } else if (guessCount == 5 ){
-            gameStatus = "over";
-            return gameStatus;
-        } else gameStatus = "play";
-    };
-
+function checkStatusFunction(){
+    if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
+        gameStatus = "win";
+        console.log(gameStatus);
+        return gameStatus;
+    } else if (guessCount == 5 ){
+        gameStatus = "over";
+        return gameStatus;
+    } else gameStatus = "play";
 };
 
 function getCheckStatus(){
