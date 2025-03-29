@@ -40,28 +40,6 @@ function updateUI(){
     let winStatus = getCheckStatus();
     console.log(theWord);
 
-    function updateColors(){
-        let yesMaybeNo = getStatusArray();
-
-        const rowLabels = ["One","Two","Three","Four","Five"];
-        let currentRow = rowLabels[count];
-
-    for (let i = 0; i < 5; i++) { // Loop through each letter (column)
-            let cellID = `row$rowLabels[count]${rowLabels[i]}`;
-            let cell = document.getElementById(cellID);
-
-            if(cell){
-                if(yesMaybeNo[i]==="yes"){
-                    cell.style.backgroundColor = "green";
-                    console.log("background color green");
-                } else if(yesMaybeNo[i] === "maybe"){
-                    cell.style.backgroundColor = "yellow";
-                    console.log("background color yellow");
-                } else console.log("no background color");
-            }
-        }
-    };
-
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
@@ -75,6 +53,29 @@ function updateUI(){
         squareFour.textContent = charFour.value;
         let squareFive = document.createElement("p");
         squareFive.textContent = charFive.value;
+
+        function updateColors(){
+            let yesMaybeNo = getStatusArray();
+    
+            const rowLabels = ["One","Two","Three","Four","Five"];
+            let currentRow = rowLabels[count];
+    
+        for (let i = 0; i < 5; i++) { // Loop through each letter (column)
+                let cellID = `row$rowLabels[count]${rowLabels[i]}`;
+                let cell = document.getElementById(cellID);
+    
+                if(cell){
+                    if(yesMaybeNo[i]==="yes"){
+                        cell.style.backgroundColor = "green";
+                        console.log("background color green");
+                    } else if(yesMaybeNo[i] === "maybe"){
+                        cell.style.backgroundColor = "yellow";
+                        console.log("background color yellow");
+                    } else console.log("no background color");
+                }
+            }
+        };
+
         
         if (count == 0){
             oneOne.appendChild(squareOne);
