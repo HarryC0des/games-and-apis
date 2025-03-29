@@ -93,37 +93,35 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
-            updateColors();
         } else if(count ==1){
             twoOne.appendChild(squareOne);
             twoTwo.appendChild(squareTwo);
             twoThree.appendChild(squareThree);
             twoFour.appendChild(squareFour);
             twoFive.appendChild(squareFive);
-            updateColors();
         } else if(count ==2){
             threeOne.appendChild(squareOne);
             threeTwo.appendChild(squareTwo);
             threeThree.appendChild(squareThree);
             threeFour.appendChild(squareFour);
             threeFive.appendChild(squareFive);
-            updateColors();
         } else if (count == 3){
             fourOne.appendChild(squareOne);
             fourTwo.appendChild(squareTwo);
             fourThree.appendChild(squareThree);
             fourFour.appendChild(squareFour);
             fourFive.appendChild(squareFive);
-            updateColors();
         } else if (count == 4){
             fiveOne.appendChild(squareOne);
             fiveTwo.appendChild(squareTwo);
             fiveThree.appendChild(squareThree);
             fiveFour.appendChild(squareFour);
             fiveFive.appendChild(squareFive);
-            updateColors();
             handler.style.display = "none";
         }
+        
+        updateColors();
+        
         console.log(guess);
         wordCheck(guess);
 
