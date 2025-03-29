@@ -41,6 +41,16 @@ function updateUI(){
     let yesMaybeNo = getStatusArray();
     console.log(theWord);
 
+    function updateColors(){
+        if(yesMaybeNo[0]=="yes"){
+            oneOne.style.backgroundColor = "green";
+            console.log("background color green");
+        } else if(yesMaybeNo == "maybe"){
+            oneOne.style.backgroundColor = "yellow";
+            console.log("background color yellow");
+        } else console.log("no background color");
+    };
+
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
@@ -61,32 +71,7 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
-            if(yesMaybeNo[0]== "yes"){
-                oneOne.style.backgroundColor="green";
-                console.log("The first letter is green");
-            } else if(yesMaybeNo[0]=="maybe"){
-                oneOne.style.backgroundColor = "yellow";
-            }
-            if(yesMaybeNo[1]== "yes"){
-                oneTwo.style.backgroundColor="green";
-            } else if(yesMaybeNo[1]=="maybe"){
-                oneTwo.style.backgroundColor = "yellow";
-            }
-            if(yesMaybeNo[2]== "yes"){
-                oneThree.style.backgroundColor="green";
-            } else if(yesMaybeNo[2]=="maybe"){
-                oneThree.style.backgroundColor = "yellow";
-            }
-            if(yesMaybeNo[3]== "yes"){
-                oneFour.style.backgroundColor="green";
-            } else if(yesMaybeNo[3]=="maybe"){
-                oneFour.style.backgroundColor = "yellow";
-            }
-            if(yesMaybeNo[4]== "yes"){
-                oneFive.style.backgroundColor="green";
-            } else if(yesMaybeNo[4]=="maybe"){
-                oneFive.style.backgroundColor = "yellow";
-            }
+            updateColors();
         } else if(count ==1){
             twoOne.appendChild(squareOne);
             twoTwo.appendChild(squareTwo);
