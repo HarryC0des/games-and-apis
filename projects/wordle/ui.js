@@ -126,6 +126,8 @@ function updateUI(){
         }
         
         console.log(guess);
+        let result = wordCheck(guess);
+        const gameStatus = result[5];
         wordCheck(guess);
 
         function updateColors(){
