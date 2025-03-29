@@ -3,6 +3,7 @@ let count = 0;
 
 function updateUI(){
     let handler = document.getElementById("wordleHandler");
+    let errorMessage = document.getElementById("errorMessage");
     let charOne = document.getElementById("boxOne");
     let charTwo = document.getElementById("boxTwo");
     let charThree = document.getElementById("boxThree");
@@ -40,6 +41,12 @@ function updateUI(){
     let winStatus = getCheckStatus();
     console.log(theWord);
 
+    let firstGuess =  "";
+    let secondGuess = "";
+    let thirdGuess = "";
+    let fourthGuess =  "";
+    let fifthGuess = "";
+
 
     wordleBtn.addEventListener("click",function(){
         let guess = charOne.value+charTwo.value+charThree.value+charFour.value+charFive.value;
@@ -54,15 +61,20 @@ function updateUI(){
         let squareFive = document.createElement("p");
         squareFive.textContent = charFive.value;
 
-        let firstGuess =  "";
-        let secondGuess = "";
-        let thirdGuess = "";
-        let fourthGuess =  "";
-        let fifthGuess = "";
-
-        if(firstGuess || secondGuess ||thirdGuess || fourthGuess || fifthGuess === guess){
-            return console.log("You already guessed that");
+        if(guess !== 5){
+            errorMessage.textContent = "Please enter a 5 letter world";
+            console.log("Please enter a 5 letter word");
+            return
         }
+
+
+    // Check for duplicate guesses
+    if (guess === firstGuess || guess === secondGuess || guess === thirdGuess || 
+        guess === fourthGuess || guess === fifthGuess) {
+            errorMessage.textContent = "You already guessed that";
+            console.log("You already guessed that");
+        return;
+    }
         
         if (count == 0){
             oneOne.appendChild(squareOne);
@@ -156,6 +168,7 @@ function updateUI(){
         charThree.value = "";
         charFour.value = "";
         charFive.value = "";
+        errorMessage = "";
     })
 
 ;}
