@@ -38,17 +38,28 @@ function updateUI(){
 
     let theWord = getSpellWord();
     let winStatus = getCheckStatus();
-    let yesMaybeNo = getStatusArray();
     console.log(theWord);
 
     function updateColors(){
-        if(yesMaybeNo=="yes"){
-            oneOne.style.backgroundColor = "green";
-            console.log("background color green");
-        } else if(yesMaybeNo == "maybe"){
-            oneOne.style.backgroundColor = "yellow";
-            console.log("background color yellow");
-        } else console.log("no background color");
+        let yesMaybeNo = getStatusArray();
+
+        const rowLabels = ["One","Two","Three","Four","Five"];
+        let currentRow = rowLabels[count];
+
+    for (let i = 0; i < 5; i++) { // Loop through each letter (column)
+            let cellID = `row$rowLabels[count]${rowLabels[i]}`;
+            let cell = document.getElementById(cellID);
+
+            if(cell){
+                if(yesMaybeNo[i]==="yes"){
+                    cell.style.backgroundColor = "green";
+                    console.log("background color green");
+                } else if(yesMaybeNo[i] === "maybe"){
+                    cell.style.backgroundColor = "yellow";
+                    console.log("background color yellow");
+                } else console.log("no background color");
+            }
+        }
     };
 
 
@@ -78,24 +89,28 @@ function updateUI(){
             twoThree.appendChild(squareThree);
             twoFour.appendChild(squareFour);
             twoFive.appendChild(squareFive);
+            updateColors();
         } else if(count ==2){
             threeOne.appendChild(squareOne);
             threeTwo.appendChild(squareTwo);
             threeThree.appendChild(squareThree);
             threeFour.appendChild(squareFour);
             threeFive.appendChild(squareFive);
+            updateColors();
         } else if (count == 3){
             fourOne.appendChild(squareOne);
             fourTwo.appendChild(squareTwo);
             fourThree.appendChild(squareThree);
             fourFour.appendChild(squareFour);
             fourFive.appendChild(squareFive);
+            updateColors();
         } else if (count == 4){
             fiveOne.appendChild(squareOne);
             fiveTwo.appendChild(squareTwo);
             fiveThree.appendChild(squareThree);
             fiveFour.appendChild(squareFour);
             fiveFive.appendChild(squareFive);
+            updateColors();
             handler.style.display = "none";
         }
         console.log(guess);
