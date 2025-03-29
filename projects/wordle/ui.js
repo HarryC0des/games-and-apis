@@ -54,7 +54,13 @@ function updateUI(){
         let squareFive = document.createElement("p");
         squareFive.textContent = charFive.value;
 
-        if(firstguess ===guess){
+        let firstGuess =  "";
+        let secondGuess = "";
+        let thirdGuess = "";
+        let fourthGuess =  "";
+        let fifthGuess = "";
+
+        if(firstGuess || secondGuess ||thirdGuess || fourthGuess || fifthGuess === guess){
             return console.log("You already guessed that");
         }
         
@@ -64,25 +70,30 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
-            firstguess = guess;
+            firstGuess = guess;
+            console.log("first guess is ",firstGuess);
         } else if(count ==1){
             twoOne.appendChild(squareOne);
             twoTwo.appendChild(squareTwo);
             twoThree.appendChild(squareThree);
             twoFour.appendChild(squareFour);
             twoFive.appendChild(squareFive);
+            secondGuess = guess;
+            console.log("second guess is ",secondGuess);
         } else if(count ==2){
             threeOne.appendChild(squareOne);
             threeTwo.appendChild(squareTwo);
             threeThree.appendChild(squareThree);
             threeFour.appendChild(squareFour);
             threeFive.appendChild(squareFive);
+            thirdGuess = guess;
         } else if (count == 3){
             fourOne.appendChild(squareOne);
             fourTwo.appendChild(squareTwo);
             fourThree.appendChild(squareThree);
             fourFour.appendChild(squareFour);
             fourFive.appendChild(squareFive);
+            fourthGuess = guess;
         } else if (count == 4){
             fiveOne.appendChild(squareOne);
             fiveTwo.appendChild(squareTwo);
@@ -90,6 +101,7 @@ function updateUI(){
             fiveFour.appendChild(squareFour);
             fiveFive.appendChild(squareFive);
             handler.style.display = "none";
+            fifthGuess = guess;
         }
         
         console.log(guess);
