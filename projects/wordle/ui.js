@@ -201,7 +201,7 @@ function updateUI(){
         charFive.value = "";
         errorMessage.textContent = "";
         };
-    };       
+    )};       
 
 
 document.addEventListener("DOMContentLoaded",updateUI);
