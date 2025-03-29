@@ -684,9 +684,8 @@ ul#taskList{
     flex-direction: row;
 }
 
-.wordle-input-container h2{
-justify-content: center;
-align-self: center;
+.worlde-input-container h2{
+    text-align: center;
 }
 
 /* Media query for smaller screens */
