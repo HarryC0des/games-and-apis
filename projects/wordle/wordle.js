@@ -9,7 +9,36 @@ function wordleWord(){
         "knack", "lumen", "mirth", "noble", "ocean",
         "pearl", "quilt", "risky", "spend", "torch",
         "umbra", "vivid", "witty", "xenon", "yacht",
-        "zesty"
+        "zesty", "about", "dream", "flint", "ghost",
+        "humor", "juice", "logic", "magic", "night",
+        "power", "queen", "robot", "smile", "tiger",
+        "unity", "voice", "wagon", "youth", "zebra",
+        "ankle", "bloom", "cloud", "drone", "earth",
+        "fungi", "grape", "heart", "igloo", "joker",
+        "kiosk", "light", "maple", "novel", "onion",
+        "plush", "quilt", "rover", "spoon", "truck",
+        "urban", "vault", "waltz", "xenia", "yodel",
+        "zoned", "angel", "beige", "chime", "drink",
+        "enjoy", "focus", "guide", "hotel", "image",
+        "jumbo", "kayak", "lucky", "music", "never",
+        "olive", "prism", "quiet", "royal", "swift",
+        "taste", "uncle", "virus", "whale", "xrays",
+        "yield", "zoom", "arrow", "banjo", "coral",
+        "daisy", "elbow", "fence", "glory", "hazel",
+        "idiot", "jelly", "koala", "lucky", "mixer",
+        "nymph", "opera", "prize", "quote", "radio",
+        "space", "tango", "usher", "video", "waste",
+        "xerox", "young", "zones", "abyss", "blend",
+        "coast", "drape", "elder", "flick", "grasp",
+        "hedge", "ivory", "jaunt", "kneel", "limbo",
+        "midst", "noble", "orbit", "peace", "quest",
+        "rural", "sushi", "track", "unity", "verse",
+        "water", "xerox", "yacht", "zesty", "amend",
+        "blink", "crash", "dwarf", "event", "frown",
+        "giant", "hobby", "ideal", "judge", "kite",
+        "lunar", "minor", "nudge", "oasis", "plant",
+        "quake", "relax", "swarm", "table", "unify",
+        "vapor", "woven", "xerox", "yield", "zoned"
     ];
 
 const randIndex = Math.floor(Math.random()*wordleChoices.length);
@@ -41,7 +70,6 @@ function wordCheck(guess) {
     let thirdLetter = spellThis[2];
     let fourthLetter = spellThis[3];
     let fifthLetter = spellThis[4];
-    console.log("word check happened");
 
         if(guess[0] == firstLetter){
             firstLetterStatus = "yes";
@@ -49,15 +77,12 @@ function wordCheck(guess) {
             firstLetterStatus = "maybe";
         } else firstLetterStatus = "no";
 
-        console.log("First Letter is "+firstLetterStatus);
-
         if(guess[1] == secondLetter){
             secondLetterStatus = "yes";
         } else if (guess[1] == firstLetter || guess[1] == thirdLetter || guess[1] == fourthLetter || guess[1] == fifthLetter){
             secondLetterStatus = "maybe";
         } else secondLetterStatus = "no";
 
-        console.log("Second Letter is "+secondLetterStatus);
 
         if(guess[2] == thirdLetter){
             thirdLetterStatus = "yes";

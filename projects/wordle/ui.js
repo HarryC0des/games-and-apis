@@ -53,6 +53,10 @@ function updateUI(){
         squareFour.textContent = charFour.value;
         let squareFive = document.createElement("p");
         squareFive.textContent = charFive.value;
+
+        if(firstguess ===guess){
+            return console.log("You already guessed that");
+        }
         
         if (count == 0){
             oneOne.appendChild(squareOne);
@@ -60,6 +64,7 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
+            firstguess = guess;
         } else if(count ==1){
             twoOne.appendChild(squareOne);
             twoTwo.appendChild(squareTwo);
@@ -120,6 +125,8 @@ function updateUI(){
         };
         
         updateColors();
+        getCheckStatus();
+
         console.log("winstatus from update UI: ", winStatus);
 
 
