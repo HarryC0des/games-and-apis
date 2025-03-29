@@ -38,7 +38,6 @@ function updateUI(){
     let status = document.getElementById("statusMessage");
 
     let theWord = getSpellWord();
-    let winStatus = getCheckStatus();
     console.log(theWord);
 
     let firstGuess =  "";

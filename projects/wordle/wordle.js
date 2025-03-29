@@ -114,7 +114,7 @@ function wordCheck(guess) {
 
     console.log(gameStatus);
     console.log(guessCount);
-    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus, fifthLetterStatus];
+    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus, fifthLetterStatus,gameStatus];
 };
 
 function getStatusArray(){
