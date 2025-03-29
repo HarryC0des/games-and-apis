@@ -102,7 +102,7 @@ function updateUI(){
             const columnLabels = ["One","Two","Three","Four","Five"];
             
             for (let i = 0; i < 5; i++) { // Loop through each letter (column)
-                let cellID = `row${rowLabels[count]}${columnLabels[i]}`;
+                let cellID = `row${columnLabels[i]}${rowLabels[count]}`;
                 let cell = document.getElementById(cellID);
 
             console.log('Cell found:', cell);
