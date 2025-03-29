@@ -99,10 +99,10 @@ function updateUI(){
 
     
             const rowLabels = ["One","Two","Three","Four","Five"];
-            const columnLabels = ["One","Two","Three","Four","Five"];
-            
+    
             for (let i = 0; i < 5; i++) { // Loop through each letter (column)
-                let cellID = `row${columnLabels[i]}${rowLabels[count]}`;
+                // This will create IDs like "rowOneOne", "rowOneTwo", etc.
+                let cellID = `row${rowLabels[count]}${rowLabels[i]}`;
                 let cell = document.getElementById(cellID);
 
             console.log('Cell found:', cell);
