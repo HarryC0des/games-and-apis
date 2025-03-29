@@ -86,6 +86,9 @@ function updateUI(){
             fiveFive.appendChild(squareFive);
             handler.style.display = "none";
         }
+        
+        console.log(guess);
+        wordCheck(guess);
 
         function updateColors(){
             console.log('updateColors called');
@@ -120,9 +123,7 @@ function updateUI(){
         };
         
         updateColors();
-        
-        console.log(guess);
-        wordCheck(guess);
+
 
         if(winStatus == "win"){
             handler.style.display = "none";
