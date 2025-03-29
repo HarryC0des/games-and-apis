@@ -62,7 +62,6 @@ let secondLetterStatus = "no";
 let thirdLetterStatus = "no";
 let fourthLetterStatus = "no";
 let fifthLetterStatus = "no";
-let gameStatus = "play";
 
 function wordCheck(guess) {
     let firstLetter = spellThis[0];
@@ -102,31 +101,24 @@ function wordCheck(guess) {
             fifthLetterStatus = "maybe";
         } else fifthLetterStatus = "no";
 
+        let gameStatus = "play";
+        if (firstLetterStatus === "yes" && secondLetterStatus === "yes" &&
+            thirdLetterStatus === "yes" && fourthLetterStatus === "yes" &&
+            fifthLetterStatus === "yes") {
+            gameStatus = "win";
+        } else if (guessCount >= 5) {
+            gameStatus = "over";
+        };
+
         guessCount++;
-        checkStatus = checkStatusFunction();
 
     console.log(gameStatus);
     console.log(guessCount);
     return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus, fifthLetterStatus];
 };
 
-function checkStatusFunction(){
-    if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
-        gameStatus = "win";
-        console.log(gameStatus);
-        return gameStatus;
-    } else if (guessCount == 5 ){
-        gameStatus = "over";
-        return gameStatus;
-    } else gameStatus = "play";
-};
-
-function getCheckStatus(){
-    return gameStatus;
-};
-
 function getStatusArray(){
     return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus,fifthLetterStatus];
 };
 
-export {wordCheck, getSpellWord, getCheckStatus, getStatusArray};
+export {wordCheck, getSpellWord, getStatusArray};
