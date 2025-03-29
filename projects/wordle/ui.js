@@ -120,9 +120,10 @@ function updateUI(){
         };
         
         updateColors();
+        console.log("winstatus from update UI: ", winStatus);
 
 
-        if(winStatus == "win"){
+        if(winStatus === "win"){
             handler.style.display = "none";
             let winMessage = document.createElement("h2");
             winMessage.textContent = "You guessed It!";
