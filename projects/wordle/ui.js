@@ -61,8 +61,8 @@ function updateUI(){
             let currentRow = rowLabels[count];
     
         for (let i = 0; i < 5; i++) { // Loop through each letter (column)
-                let cellID = `row$rowLabels[count]${rowLabels[i]}`;
-                let cell = document.getElementById(cellID);
+            let cellID = `row${rowLabels[count]}${rowLabels[i]}`;
+            let cell = document.getElementById(cellID);
     
                 if(cell){
                     if(yesMaybeNo[i]==="yes"){
