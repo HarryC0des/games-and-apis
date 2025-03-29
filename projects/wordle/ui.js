@@ -68,7 +68,7 @@ function updateUI(){
             charThree.value = "";
             charFour.value = "";
             charFive.value = "";
-            return
+            return;
         };
 
         if (!isValidWord(guess)) {

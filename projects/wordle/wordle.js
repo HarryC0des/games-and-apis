@@ -3,7 +3,7 @@ let spellThis = "";  // Global variable to store the generated word
 let wordList = new Set();  // Store words in a Set for quick lookup
 
 // Fetch word list and store it in `wordList`
-async function loadWordList() {
+async function wordleWord() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/tabatkins/wordle-list/main/words');
         if (!response.ok) throw new Error('Failed to fetch word list');
@@ -25,7 +25,7 @@ function isValidWord(word) {
     return wordList.has(word.toLowerCase());
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     await wordleWord();  // Initialize spellThis when DOM is ready
 });
 
