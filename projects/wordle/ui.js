@@ -55,14 +55,24 @@ function updateUI(){
         squareFive.textContent = charFive.value;
 
         function updateColors(){
+            console.log('updateColors called');
+            console.log('Current count:', count);
+
             let yesMaybeNo = getStatusArray();
+            console.log('getStatusArray returned:', yesMaybeNo);
+
     
             const rowLabels = ["One","Two","Three","Four","Five"];
             let currentRow = rowLabels[count];
+
+            console.log('Current row:', currentRow);
+
     
         for (let i = 0; i < 5; i++) { // Loop through each letter (column)
             let cellID = `row${rowLabels[count]}${rowLabels[i]}`;
             let cell = document.getElementById(cellID);
+
+            console.log('Cell found:', cell);
     
                 if(cell){
                     if(yesMaybeNo[i]==="yes"){
