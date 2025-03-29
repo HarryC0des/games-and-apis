@@ -2,48 +2,20 @@ import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 
 function wordleWord(){
-    const wordleChoices = [
-        "apple", "brave", "charm", "dance", "eager",
-        "frost", "glide", "haste", "ivory", "jolly",
-        "knack", "lumen", "mirth", "noble", "ocean",
-        "pearl", "quilt", "risky", "spend", "torch",
-        "umbra", "vivid", "witty", "xenon", "yacht",
-        "zesty", "about", "dream", "flint", "ghost",
-        "humor", "juice", "logic", "magic", "night",
-        "power", "queen", "robot", "smile", "tiger",
-        "unity", "voice", "wagon", "youth", "zebra",
-        "ankle", "bloom", "cloud", "drone", "earth",
-        "fungi", "grape", "heart", "igloo", "joker",
-        "kiosk", "light", "maple", "novel", "onion",
-        "plush", "quilt", "rover", "spoon", "truck",
-        "urban", "vault", "waltz", "xenia", "yodel",
-        "zoned", "angel", "beige", "chime", "drink",
-        "enjoy", "focus", "guide", "hotel", "image",
-        "jumbo", "kayak", "lucky", "music", "never",
-        "olive", "prism", "quiet", "royal", "swift",
-        "taste", "uncle", "virus", "whale", "xrays",
-        "yield", "zoom", "arrow", "banjo", "coral",
-        "daisy", "elbow", "fence", "glory", "hazel",
-        "idiot", "jelly", "koala", "lucky", "mixer",
-        "nymph", "opera", "prize", "quote", "radio",
-        "space", "tango", "usher", "video", "waste",
-        "xerox", "young", "zones", "abyss", "blend",
-        "coast", "drape", "elder", "flick", "grasp",
-        "hedge", "ivory", "jaunt", "kneel", "limbo",
-        "midst", "noble", "orbit", "peace", "quest",
-        "rural", "sushi", "track", "unity", "verse",
-        "water", "xerox", "yacht", "zesty", "amend",
-        "blink", "crash", "dwarf", "event", "frown",
-        "giant", "hobby", "ideal", "judge", "kite",
-        "lunar", "minor", "nudge", "oasis", "plant",
-        "quake", "relax", "swarm", "table", "unify",
-        "vapor", "woven", "xerox", "yield", "zoned"
-    ];
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/tabatkins/wordle-list/main/words');
+        if (!response.ok) throw new Error('Failed to fetch word list');
+        
+        const text = await response.text();
+        const words = text.split('\n'); // Split by new lines to get individual words
+        const spellThis = words[Math.floor(Math.random() * words.length)]; // Pick a random word
 
-const randIndex = Math.floor(Math.random()*wordleChoices.length);
-spellThis = wordleChoices[randIndex];
-console.log(spellThis);
-return spellThis;
+        console.log(spellThis); // Output the random word
+        return spellThis;
+    } catch (error) {
+        console.error('Error fetching word list:', error);
+        return null;
+    }
 };
 
 document.addEventListener("DOMContentLoaded", function() {
