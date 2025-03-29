@@ -79,7 +79,7 @@ function wordCheck(guess) {
         checkStatus = checkStatusFunction();
 
         guessCount++;
-        checkStatus();
+        checkStatusFunction();
 
     console.log(gameStatus);
     console.log(guessCount);

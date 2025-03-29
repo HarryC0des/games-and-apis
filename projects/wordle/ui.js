@@ -63,6 +63,7 @@ function updateUI(){
             oneFive.appendChild(squareFive);
             if(yesMaybeNo[0]== "yes"){
                 oneOne.style.backgroundColor="green";
+                console.log("The first letter is green");
             } else if(yesMaybeNo[0]=="maybe"){
                 oneOne.style.backgroundColor = "yellow";
             }
