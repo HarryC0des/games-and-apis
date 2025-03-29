@@ -1,5 +1,6 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
+let checkStatus = "";
 
 function wordleWord(){
     const wordleChoices = [
