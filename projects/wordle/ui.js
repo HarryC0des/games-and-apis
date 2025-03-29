@@ -42,7 +42,7 @@ function updateUI(){
     console.log(theWord);
 
     function updateColors(){
-        if(yesMaybeNo[0]=="yes"){
+        if(yesMaybeNo=="yes"){
             oneOne.style.backgroundColor = "green";
             console.log("background color green");
         } else if(yesMaybeNo == "maybe"){
@@ -71,7 +71,6 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
-            console.log("turn count 0 test");
             updateColors();
         } else if(count ==1){
             twoOne.appendChild(squareOne);
