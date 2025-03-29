@@ -38,7 +38,7 @@ function updateUI(){
     let status = document.getElementById("statusMessage");
 
     let theWord = getSpellWord();
-    console.log(theWord);
+    console.log("You need to spell" , theWord);
 
     let firstGuess =  "";
     let secondGuess = "";

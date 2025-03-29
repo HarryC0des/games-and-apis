@@ -1,6 +1,7 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 let wordList = new Set();  // Store words in a Set for quick lookup
+let gameStatus = "play";
 
 // Fetch word list and store it in `wordList`
 async function wordleWord() {
