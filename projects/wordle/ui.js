@@ -71,14 +71,14 @@ function updateUI(){
             return
         };
 
-        if(badGuess === "yes"){
+        if (!isValidWord(guess)) {
             errorMessage.textContent = "Please enter a valid 5-letter word";
             charOne.value = "";
             charTwo.value = "";
             charThree.value = "";
             charFour.value = "";
             charFive.value = "";
-            return
+            return;
         }
 
 
@@ -200,8 +200,8 @@ function updateUI(){
         charFour.value = "";
         charFive.value = "";
         errorMessage.textContent = "";
-        };
-    )};       
+        });  
+}         
 
 
 document.addEventListener("DOMContentLoaded",updateUI);

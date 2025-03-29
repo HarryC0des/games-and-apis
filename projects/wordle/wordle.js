@@ -1,7 +1,6 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 let wordList = new Set();  // Store words in a Set for quick lookup
-let badGuess = "";
 
 // Fetch word list and store it in `wordList`
 async function loadWordList() {
@@ -32,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function getSpellWord(){
     return spellThis;
-    badGuess = "yes";
-    return
 }
 
 
@@ -76,7 +73,7 @@ let fifthLetterStatus = "no";
         
         console.log(guessStatus);
         guessCount++;
-        return [guessStatus, gameStatus,badGuess];
+        return [guessStatus, gameStatus];
     };
 
 function getStatusArray(){
