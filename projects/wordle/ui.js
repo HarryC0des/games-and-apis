@@ -62,8 +62,13 @@ function updateUI(){
         squareFive.textContent = charFive.value;
 
         if(guess.length !== 5){
-            errorMessage.textContent = "Please enter a 5 letter world";
+            errorMessage.textContent = "Please enter a 5 letter word";
             console.log("Please enter a 5 letter word");
+            charOne.value = "";
+            charTwo.value = "";
+            charThree.value = "";
+            charFour.value = "";
+            charFive.value = "";
             return
         };
 
@@ -72,6 +77,11 @@ function updateUI(){
     if (guess === firstGuess || guess === secondGuess || guess === thirdGuess || 
         guess === fourthGuess || guess === fifthGuess) {
             errorMessage.textContent = "You already guessed that";
+            charOne.value = "";
+            charTwo.value = "";
+            charThree.value = "";
+            charFour.value = "";
+            charFive.value = "";
             console.log("You already guessed that");
         return;
     };
@@ -168,7 +178,7 @@ function updateUI(){
         charThree.value = "";
         charFour.value = "";
         charFive.value = "";
-        errorMessage = "";
+        errorMessage.textContent = "";
     })
 
 ;}
