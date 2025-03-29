@@ -61,11 +61,11 @@ function updateUI(){
         let squareFive = document.createElement("p");
         squareFive.textContent = charFive.value;
 
-        if(guess !== 5){
+        if(guess.length !== 5){
             errorMessage.textContent = "Please enter a 5 letter world";
             console.log("Please enter a 5 letter word");
             return
-        }
+        };
 
 
     // Check for duplicate guesses
@@ -74,7 +74,7 @@ function updateUI(){
             errorMessage.textContent = "You already guessed that";
             console.log("You already guessed that");
         return;
-    }
+    };
         
         if (count == 0){
             oneOne.appendChild(squareOne);
