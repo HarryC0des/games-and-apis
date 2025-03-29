@@ -1,6 +1,5 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
-let checkStatus = "";
 
 function wordleWord(){
     const wordleChoices = [
@@ -77,7 +76,15 @@ function wordCheck(guess) {
             fifthLetterStatus = "maybe";
         } else fifthLetterStatus = "no";
 
-    function checkStatus(){
+        checkStatus = checkStatusFunction();
+
+        guessCount++;
+        checkStatus();
+
+    console.log(gameStatus);
+    console.log(guessCount);
+
+    function checkStatusFunction(){
         if(firstLetterStatus == "yes" && secondLetterStatus == "yes" && thirdLetterStatus == "yes" && fourthLetterStatus == "yes" && fifthLetterStatus == "yes"){
             gameStatus = "win";
             console.log(gameStatus);
@@ -87,12 +94,6 @@ function wordCheck(guess) {
             return gameStatus;
         } else gameStatus = "play";
     };
-
-        guessCount++;
-        checkStatus();
-
-    console.log(gameStatus);
-    console.log(guessCount);
 
 };
 
