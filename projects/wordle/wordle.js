@@ -63,61 +63,38 @@ let fourthLetterStatus = "no";
 let fifthLetterStatus = "no";
 
 function wordCheck(guess) {
-    let firstLetter = spellThis[0];
-    let secondLetter = spellThis[1];
-    let thirdLetter = spellThis[2];
-    let fourthLetter = spellThis[3];
-    let fifthLetter = spellThis[4];
-
-        if(guess[0] == firstLetter){
-            firstLetterStatus = "yes";
-        } else if (guess[0] == secondLetter || guess[0] == thirdLetter || guess[0] == fourthLetter || guess[0] == fifthLetter){
-            firstLetterStatus = "maybe";
-        } else firstLetterStatus = "no";
-
-        if(guess[1] == secondLetter){
-            secondLetterStatus = "yes";
-        } else if (guess[1] == firstLetter || guess[1] == thirdLetter || guess[1] == fourthLetter || guess[1] == fifthLetter){
-            secondLetterStatus = "maybe";
-        } else secondLetterStatus = "no";
-
-
-        if(guess[2] == thirdLetter){
-            thirdLetterStatus = "yes";
-        } else if (guess[2] == firstLetter || guess[2] == secondLetter || guess[2] == fourthLetter || guess[2] == fifthLetter){
-            thirdLetterStatus = "maybe";
-        } else thirdLetterStatus = "no";
-
-        if(guess[3] == fourthLetter){
-            fourthLetterStatus = "yes";
-        } else if (guess[3] == firstLetter || guess[3] == secondLetter || guess[3] == thirdLetter || guess[3] == fifthLetter){
-            fourthLetterStatus = "maybe";
-        } else fourthLetterStatus = "no";
-
-        if(guess[4] == fifthLetter){
-            fifthLetterStatus = "yes";
-        } else if (guess[4] == firstLetter || guess[4] == secondLetter || guess[4] == thirdLetter || guess[4] == fourthLetter){
-            fifthLetterStatus = "maybe";
-        } else fifthLetterStatus = "no";
-
-        let gameStatus = "play";
-        if (firstLetterStatus === "yes" && secondLetterStatus === "yes" &&
-            thirdLetterStatus === "yes" && fourthLetterStatus === "yes" &&
-            fifthLetterStatus === "yes") {
-            gameStatus = "win";
-        } else if (guessCount >= 5) {
-            gameStatus = "over";
-        };
-
+    function wordCheck(guess) {
+        let letterCount = {}; // Track how many times each letter appears in spellThis
+        let guessStatus = ["no", "no", "no", "no", "no"]; // Default all to "no"
+    
+        // Count occurrences of each letter in spellThis
+        for (let letter of spellThis) {
+            letterCount[letter] = (letterCount[letter] || 0) + 1;
+        }
+    
+        // Step 1: Check exact matches first (mark "yes")
+        for (let i = 0; i < 5; i++) {
+            if (guess[i] === spellThis[i]) {
+                guessStatus[i] = "yes";
+                letterCount[guess[i]]--; // Reduce count since it's correctly used
+            }
+        }
+    
+        // Step 2: Check misplaced letters (mark "maybe" only if available)
+        for (let i = 0; i < 5; i++) {
+            if (guessStatus[i] === "no" && letterCount[guess[i]] > 0) {
+                guessStatus[i] = "maybe";
+                letterCount[guess[i]]--; // Reduce count since it's now used
+            }
+        }
+        
+        console.log(guessStatus);
         guessCount++;
-
-    console.log(gameStatus);
-    console.log(guessCount);
-    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus, fifthLetterStatus,gameStatus];
-};
+        return [guessStatus, gameStatus];
+    };
 
 function getStatusArray(){
-    return [firstLetterStatus, secondLetterStatus, thirdLetterStatus, fourthLetterStatus,fifthLetterStatus];
+    return guessStatus;
 };
 
 export {wordCheck, getSpellWord, getStatusArray};

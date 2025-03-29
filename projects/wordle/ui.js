@@ -127,7 +127,7 @@ function updateUI(){
         
         console.log(guess);
         let result = wordCheck(guess);
-        const gameStatus = result[5];
+        const gameStatus = result[1];
         wordCheck(guess);
 
         function updateColors(){
@@ -169,6 +169,19 @@ function updateUI(){
             let winMessage = document.createElement("h2");
             winMessage.textContent = "You guessed It!";
             status.appendChild(winMessage);
+
+                
+            for (let i = 0; i < 5; i++) { // Loop through each letter (column)
+                // This will create IDs like "rowOneOne", "rowOneTwo", etc.
+                let cellIDTwo = `row${rowLabels[count]}${rowLabels[i]}`;
+                let cellTwo = document.getElementById(cellIDTwo);
+    
+                if(!cellTwo.hasChildNodes()){
+                    cellTwo.style.display = "none";
+                }
+            }
+        };
+
         };
 
         count++;
