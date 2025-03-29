@@ -182,8 +182,6 @@ function updateUI(){
             }
         };
 
-        };
-
         count++;
 
         charOne.value = "";
@@ -192,10 +190,7 @@ function updateUI(){
         charFour.value = "";
         charFive.value = "";
         errorMessage.textContent = "";
-    })
-
-;}
-
+        };
 
 
 document.addEventListener("DOMContentLoaded",updateUI);

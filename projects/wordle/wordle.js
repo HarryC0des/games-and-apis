@@ -1,14 +1,14 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 
-function wordleWord(){
+async function wordleWord(){
     try {
         const response = await fetch('https://raw.githubusercontent.com/tabatkins/wordle-list/main/words');
         if (!response.ok) throw new Error('Failed to fetch word list');
         
         const text = await response.text();
         const words = text.split('\n'); // Split by new lines to get individual words
-        const spellThis = words[Math.floor(Math.random() * words.length)]; // Pick a random word
+        spellThis = words[Math.floor(Math.random() * words.length)]; // Pick a random word
 
         console.log(spellThis); // Output the random word
         return spellThis;
@@ -19,7 +19,7 @@ function wordleWord(){
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    wordleWord();  // Initialize spellThis when DOM is ready
+    await wordleWord();  // Initialize spellThis when DOM is ready
 });
 
 function getSpellWord(){
