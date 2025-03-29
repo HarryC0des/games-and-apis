@@ -71,6 +71,7 @@ function updateUI(){
             oneThree.appendChild(squareThree);
             oneFour.appendChild(squareFour);
             oneFive.appendChild(squareFive);
+            console.log("turn count 0 test");
             updateColors();
         } else if(count ==1){
             twoOne.appendChild(squareOne);
