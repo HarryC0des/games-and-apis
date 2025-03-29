@@ -1,21 +1,29 @@
 import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
+let wordList = new Set();  // Store words in a Set for quick lookup
+let badGuess = "";
 
-async function wordleWord(){
+// Fetch word list and store it in `wordList`
+async function loadWordList() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/tabatkins/wordle-list/main/words');
         if (!response.ok) throw new Error('Failed to fetch word list');
         
         const text = await response.text();
-        const words = text.split('\n'); // Split by new lines to get individual words
-        spellThis = words[Math.floor(Math.random() * words.length)]; // Pick a random word
+        const words = text.split('\n').map(word => word.trim().toLowerCase()); // Normalize case
+        wordList = new Set(words); // Store in a Set for quick lookup
 
-        console.log(spellThis); // Output the random word
-        return spellThis;
+        // Pick a random word
+        spellThis = words[Math.floor(Math.random() * words.length)];
+        console.log("Generated Word:", spellThis); // Debugging
     } catch (error) {
         console.error('Error fetching word list:', error);
-        return null;
     }
+};
+
+// Check if a word is valid
+function isValidWord(word) {
+    return wordList.has(word.toLowerCase());
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -24,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function getSpellWord(){
     return spellThis;
+    badGuess = "yes";
+    return
 }
 
 
@@ -34,8 +44,12 @@ let thirdLetterStatus = "no";
 let fourthLetterStatus = "no";
 let fifthLetterStatus = "no";
 
-function wordCheck(guess) {
-    function wordCheck(guess) {
+  function wordCheck(guess) {
+    if(!isValidWord(guess)){
+        console.log("Invalid word");
+
+    }
+
         let letterCount = {}; // Track how many times each letter appears in spellThis
         let guessStatus = ["no", "no", "no", "no", "no"]; // Default all to "no"
     
@@ -62,7 +76,7 @@ function wordCheck(guess) {
         
         console.log(guessStatus);
         guessCount++;
-        return [guessStatus, gameStatus];
+        return [guessStatus, gameStatus,badGuess];
     };
 
 function getStatusArray(){

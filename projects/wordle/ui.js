@@ -71,6 +71,16 @@ function updateUI(){
             return
         };
 
+        if(badGuess === "yes"){
+            errorMessage.textContent = "Please enter a valid 5-letter word";
+            charOne.value = "";
+            charTwo.value = "";
+            charThree.value = "";
+            charFour.value = "";
+            charFive.value = "";
+            return
+        }
+
 
     // Check for duplicate guesses
     if (guess === firstGuess || guess === secondGuess || guess === thirdGuess || 
@@ -191,6 +201,7 @@ function updateUI(){
         charFive.value = "";
         errorMessage.textContent = "";
         };
+    };       
 
 
 document.addEventListener("DOMContentLoaded",updateUI);
