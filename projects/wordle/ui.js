@@ -1,5 +1,6 @@
 import {wordCheck, getSpellWord, getStatusArray} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
+let gameStatus = "play";
 
 function updateUI(){
     let handler = document.getElementById("wordleHandler");
