@@ -99,14 +99,11 @@ function updateUI(){
 
     
             const rowLabels = ["One","Two","Three","Four","Five"];
-            let currentRow = rowLabels[count];
-
-            console.log('Current row:', currentRow);
-
-    
-        for (let i = 0; i < 5; i++) { // Loop through each letter (column)
-            let cellID = `row${rowLabels[count]}${rowLabels[i]}`;
-            let cell = document.getElementById(cellID);
+            const columnLabels = ["One","Two","Three","Four","Five"];
+            
+            for (let i = 0; i < 5; i++) { // Loop through each letter (column)
+                let cellID = `row${rowLabels[count]}${columnLabels[i]}`;
+                let cell = document.getElementById(cellID);
 
             console.log('Cell found:', cell);
     
