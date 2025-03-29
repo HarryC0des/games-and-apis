@@ -1,4 +1,4 @@
-import {wordCheck, getSpellWord, getStatusArray} from "/games-and-apis/projects/wordle/wordle.js";
+import {wordCheck, getSpellWord, getStatusArray, isValidWord} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){

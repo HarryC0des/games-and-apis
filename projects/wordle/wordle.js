@@ -80,4 +80,4 @@ function getStatusArray(){
     return guessStatus;
 };
 
-export {wordCheck, getSpellWord, getStatusArray};
+export {wordCheck, getSpellWord, getStatusArray, isValidWord};
