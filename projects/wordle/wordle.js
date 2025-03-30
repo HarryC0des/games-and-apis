@@ -84,11 +84,11 @@ let fifthLetterStatus = "no";
             gameStatus = "over";
         }
 
-        function getStatusArray(){
-            return guessStatus;
-        };
-
         return [guessStatus, gameStatus];
+    };
+
+    function getStatusArray(){
+        return guessStatus;
     };
 
 export {wordCheck, getSpellWord, getStatusArray, isValidWord};
