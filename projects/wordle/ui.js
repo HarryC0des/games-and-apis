@@ -194,7 +194,7 @@ function updateUI(){
         if(gameStatus !== "win" && count == 4){
             handler.style.display = "none";
             let winMessage = document.createElement("h2");
-            winMessage.textContent = `The word was ${spellThis}`;
+            winMessage.textContent = `The word was ${theWord}`;
         };
 
         count++;
