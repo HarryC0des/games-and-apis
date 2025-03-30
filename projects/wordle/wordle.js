@@ -90,4 +90,4 @@ let fifthLetterStatus = "no";
         return guessStatus;
     };
 
-export {wordCheck, getSpellWord, getStatusArray, isValidWord};
+export {wordCheck, getSpellWord, getStatusArray, isValidWord , wordleWord};

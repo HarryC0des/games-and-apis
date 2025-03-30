@@ -1,4 +1,4 @@
-import {wordCheck, getSpellWord, getStatusArray, isValidWord} from "/games-and-apis/projects/wordle/wordle.js";
+import {wordCheck, getSpellWord, getStatusArray, isValidWord , wordleWord} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){
@@ -210,5 +210,8 @@ function updateUI(){
 }         
 
 
-document.addEventListener("DOMContentLoaded",updateUI);
+document.addEventListener("DOMContentLoaded",  async function(){
+    await wordleWord();
+    updateUI();
+});
 export {updateUI};
