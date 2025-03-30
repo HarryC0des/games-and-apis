@@ -72,9 +72,18 @@ let fifthLetterStatus = "no";
                 letterCount[guess[i]]--; // Reduce count since it's now used
             }
         }
+
+        if(guessStatus[0]=== "yes" && guessStatus[1]=== "yes" && guessStatus[2]=== "yes" && guessStatus[3]==="yes" && guessStatus[4]==="yes"){
+            gameStatus = "win";
+        }
         
         console.log(guessStatus);
         guessCount++;
+
+        if(guessCount === 5 && gameStatus !== "win"){
+            gameStatus = "over";
+        }
+
         return [guessStatus, gameStatus];
     };
 
