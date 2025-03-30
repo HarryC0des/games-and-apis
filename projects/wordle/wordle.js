@@ -2,6 +2,7 @@ import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 let wordList = new Set();  // Store words in a Set for quick lookup
 let gameStatus = "play";
+let guessStatus = "";
 
 // Fetch word list and store it in `wordList`
 async function wordleWord() {
@@ -49,7 +50,7 @@ let fifthLetterStatus = "no";
     }
 
         let letterCount = {}; // Track how many times each letter appears in spellThis
-        let guessStatus = ["no", "no", "no", "no", "no"];  
+        guessStatus = ["no", "no", "no", "no", "no"];  
     
         // Count occurrences of each letter in spellThis
         for (let letter of spellThis) {
@@ -83,7 +84,11 @@ let fifthLetterStatus = "no";
             gameStatus = "over";
         }
 
+        function getStatusArray(){
+            return guessStatus;
+        };
+
         return [guessStatus, gameStatus];
     };
 
-export {wordCheck, getSpellWord, guessStatus, isValidWord};
+export {wordCheck, getSpellWord, getStatusArray, isValidWord};
