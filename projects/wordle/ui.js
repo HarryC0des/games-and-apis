@@ -195,6 +195,7 @@ function updateUI(){
             handler.style.display = "none";
             let winMessage = document.createElement("h2");
             winMessage.textContent = `The word was ${theWord}`;
+            status.appendChild(winMessage);
         };
 
         count++;
