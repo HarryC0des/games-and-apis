@@ -78,6 +78,7 @@ let fifthLetterStatus = "no";
         }
         
         console.log(guessStatus);
+        console.log(guessCount);
         guessCount++;
 
         if(guessCount === 5 && gameStatus !== "win"){
