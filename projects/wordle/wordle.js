@@ -27,18 +27,15 @@ function isValidWord(word) {
     return wordList.has(word.toLowerCase());
 };
 
-document.addEventListener("DOMContentLoaded", async function() {
-    await wordleWord();  // Initialize spellThis when DOM is ready
-});
-
 function getSpellWord(){
     console.log("spell this:", spellThis);
     return spellThis;
 }
 
-document.addEventListener("DOMContentLoaded", function (){
-    getSpellWord();
-})
+document.addEventListener("DOMContentLoaded", async function() {
+    await wordleWord();  // Initialize spellThis when DOM is ready
+    await getSpellWord();
+});
 
 
 let guessCount = 0;
