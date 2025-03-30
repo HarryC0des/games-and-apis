@@ -131,7 +131,6 @@ function updateUI(){
             fiveThree.appendChild(squareThree);
             fiveFour.appendChild(squareFour);
             fiveFive.appendChild(squareFive);
-            handler.style.display = "none";
             fifthGuess = guess;
         }
         
@@ -192,7 +191,8 @@ function updateUI(){
             }
         };
 
-        if(gameStatus !== "win" && count == 5){
+        if(gameStatus !== "win" && count == 4){
+            handler.style.display = "none";
             winMessage = document.createElement("h2");
             winMessage.textContent = `The word was ${spellThis}`;
         };
