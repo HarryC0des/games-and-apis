@@ -192,6 +192,11 @@ function updateUI(){
             }
         };
 
+        if(gameStatus === "over"){
+            winMessage = document.createElement("h2");
+            winMessage.textContent = `The word was ${spellThis}`;
+        };
+
         count++;
 
         charOne.value = "";
