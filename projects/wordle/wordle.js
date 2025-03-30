@@ -81,10 +81,6 @@ let fifthLetterStatus = "no";
         console.log(guessCount);
         guessCount++;
 
-        if(guessCount === 5 && gameStatus !== "win"){
-            gameStatus = "over";
-        }
-
         return [guessStatus, gameStatus];
     };
 

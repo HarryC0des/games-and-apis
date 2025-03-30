@@ -192,7 +192,7 @@ function updateUI(){
             }
         };
 
-        if(gameStatus === "over"){
+        if(gameStatus !== "win" && count == 5){
             winMessage = document.createElement("h2");
             winMessage.textContent = `The word was ${spellThis}`;
         };
