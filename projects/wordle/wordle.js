@@ -2,7 +2,6 @@ import { updateUI } from "/games-and-apis/projects/wordle/ui.js";
 let spellThis = "";  // Global variable to store the generated word
 let wordList = new Set();  // Store words in a Set for quick lookup
 let gameStatus = "play";
-let guessStatus = ["no", "no", "no", "no", "no"];  
 
 // Fetch word list and store it in `wordList`
 async function wordleWord() {
@@ -87,8 +86,4 @@ let fifthLetterStatus = "no";
         return [guessStatus, gameStatus];
     };
 
-function getStatusArray(){
-    return guessStatus;
-};
-
-export {wordCheck, getSpellWord, getStatusArray, isValidWord};
+export {wordCheck, getSpellWord, guessStatus, isValidWord};

@@ -1,4 +1,5 @@
-import {wordCheck, getSpellWord, getStatusArray, isValidWord} from "/games-and-apis/projects/wordle/wordle.js";
+import { guessStatus } from "./wordle";
+import {wordCheck, getSpellWord, guessStatus, isValidWord} from "/games-and-apis/projects/wordle/wordle.js";
 let count = 0;
 
 function updateUI(){
@@ -144,7 +145,7 @@ function updateUI(){
             console.log('updateColors called');
             console.log('Current count:', count);
 
-            let yesMaybeNo = getStatusArray();
+            let yesMaybeNo = guessStatus;
             console.log('getStatusArray returned:', yesMaybeNo);
 
     
