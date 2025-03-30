@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 function getSpellWord(){
+    console.log("spell this:", spellThis);
     return spellThis;
 }
 
