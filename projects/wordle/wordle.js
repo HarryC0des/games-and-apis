@@ -36,6 +36,10 @@ function getSpellWord(){
     return spellThis;
 }
 
+document.addEventListener("DOMContentLoaded", function (){
+    getSpellWord();
+})
+
 
 let guessCount = 0;
 let firstLetterStatus = "no";
